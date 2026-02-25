@@ -7,21 +7,17 @@ import { ExperienceSection } from "./components/ExperienceSection.tsx";
 import { ProjectsSection } from "./components/ProjectsSection.tsx";
 import { StackSection } from "./components/StackSection.tsx";
 import { EducationSection } from "./components/EducationSection.tsx";
-// Tendrás que separar la Navbar y el Menú lateral en sus propios componentes:
 import { NavBar } from "./components/NavBar.tsx";
 import { SideMenu } from "./components/SideMenu.tsx";
 
 function App() {
-    // 1. Mantienes los estados en App.tsx para compartirlos
     const [activeSection, setActiveSection] = useState('home');
     const [scrolled, setScrolled] = useState(false);
 
-    // 2. El useEffect del Canvas se queda aquí en el nivel superior
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 150);
 
-            // Los IDs deben coincidir con los que le pongas a cada uno de tus componentes
             const sections = ['home', 'profile', 'experience', 'projects', 'skills', 'education'];
             let current = 'home';
 
@@ -49,13 +45,15 @@ function App() {
             <NavBar scrolled={scrolled} />
             <SideMenu activeSection={activeSection} scrolled={scrolled} />
 
-
-            <div id="home"><HeroSection/></div>
-            <div id="profile"><InfoSection/></div>
-            <div id="experience"><ExperienceSection/></div>
-            <div id="projects"><ProjectsSection/></div>
-            <div id="skills"><StackSection/></div>
-            <div id="education"><EducationSection/></div>
+            {/* ¡AQUÍ ESTÁ LA SOLUCIÓN! Envolvemos el contenido en este main */}
+            <main className="max-w-6xl mx-auto px-6 w-full pb-20">
+                <div id="home"><HeroSection/></div>
+                <div id="profile"><InfoSection/></div>
+                <div id="experience"><ExperienceSection/></div>
+                <div id="projects"><ProjectsSection/></div>
+                <div id="skills"><StackSection/></div>
+                <div id="education"><EducationSection/></div>
+            </main>
 
         </div>
     )

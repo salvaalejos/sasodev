@@ -15,11 +15,11 @@ export const StackSection = () => {
                         <h4 className="text-xl font-bold text-white">Frontend & Mobile</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <Badge color="purple">React (Advanced)</Badge>
+                        <Badge color="purple">React</Badge>
                         <Badge>Flutter</Badge>
-                        <Badge>Tailwind CSS</Badge>
-                        <Badge>JavaScript</Badge>
-                        <Badge>HTML5 / CSS3</Badge>
+                        <Badge color="purple">Tailwind CSS</Badge>
+                        <Badge color="purple">JavaScript</Badge>
+                        <Badge color="purple">HTML5 / CSS3</Badge>
                     </div>
                 </GlassCard>
 
@@ -29,8 +29,8 @@ export const StackSection = () => {
                         <h4 className="text-xl font-bold text-white">Backend & APIs</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <Badge color="purple">Java (Advanced)</Badge>
-                        <Badge>Python</Badge>
+                        <Badge color="purple">Java</Badge>
+                        <Badge color="purple">Python</Badge>
                         <Badge>FastAPI</Badge>
                         <Badge>Flask</Badge>
                         <Badge>PHP</Badge>
@@ -44,10 +44,9 @@ export const StackSection = () => {
                         <h4 className="text-xl font-bold text-white">Databases & Data</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <Badge>PostgreSQL</Badge>
-                        <Badge>PostGIS</Badge>
+                        <Badge color="purple">PostgreSQL</Badge>
                         <Badge>MySQL</Badge>
-                        <Badge>SQL</Badge>
+                        <Badge color="purple">SQL</Badge>
                         <Badge>Pandas (ETL)</Badge>
                     </div>
                 </GlassCard>
@@ -58,12 +57,12 @@ export const StackSection = () => {
                         <h4 className="text-xl font-bold text-white">Cloud & DevOps</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <Badge color="cyan">AWS</Badge>
+                        <Badge color="purple">AWS</Badge>
                         <Badge>Linux (Admin)</Badge>
                         <Badge>DigitalOcean</Badge>
-                        <Badge>VPS</Badge>
+                        <Badge color="purple">VPS</Badge>
                         <Badge>Nginx</Badge>
-                        <Badge>Docker</Badge>
+                        <Badge color="purple">Docker</Badge>
                     </div>
                 </GlassCard>
 
@@ -73,7 +72,7 @@ export const StackSection = () => {
                         <h4 className="text-xl font-bold text-white">Networking & Telecom</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <Badge>Subnetting</Badge>
+                        <Badge color="purple">Subnetting</Badge>
                         <Badge>Router Config</Badge>
                         <Badge>LAN / WAN</Badge>
                         <Badge>Protocols</Badge>

@@ -1,8 +1,6 @@
 import {SectionTitle} from "./shared/SectionTitle.tsx";
-import {Code, User} from "lucide-react";
+import {User} from "lucide-react";
 import {GlassCard} from "./shared/GlassCard.tsx";
-
-
 
 export const InfoSection = () => {
     return (
@@ -22,9 +20,19 @@ export const InfoSection = () => {
                         driven by a constant focus on scalability and operational efficiency.
                     </p>
                 </div>
-                <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.2)]">
-                    <Code className="w-12 h-12 text-cyan-300" />
+
+                {/* CONTENEDOR DE LA IMAGEN TIPO RETRATO */}
+                <div className="w-48 h-64 sm:w-56 sm:h-72 flex-shrink-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-2xl flex items-end justify-center shadow-[0_0_30px_rgba(168,85,247,0.2)] overflow-hidden relative">
+                    {/* Efecto de brillo detrás de ti (opcional) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent z-0"></div>
+
+                    <img
+                        src="/src/images/me.png"
+                        alt="Mi perfil"
+                        className="w-full h-full object-contain object-bottom drop-shadow-2xl relative z-10"
+                    />
                 </div>
+
             </GlassCard>
         </section>
     )
