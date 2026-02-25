@@ -5,16 +5,16 @@ import {
     TrendingDown,
     Zap,
     Server,
-    Badge,
     Code,
     Terminal,
     Users,
     Globe,
-    GraduationCap, Database
+    GraduationCap, Database, TrendingUp
 } from "lucide-react";
 import {GlassCard} from "./shared/GlassCard.tsx";
 import {Metric} from "./shared/Metric.tsx";
 import {FeatureItem} from "./shared/FeaturedItem.tsx";
+import {Badge} from "./shared/Badge.tsx";
 
 export const ExperienceSection = () => {
     return (
@@ -35,7 +35,7 @@ export const ExperienceSection = () => {
 
                     {/* Visual Metrics */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <Metric icon={TrendingDown} value="60%" label="Cost Reduction" />
+                        <Metric icon={TrendingUp} value="60%" label="More Production" />
                         <Metric icon={Server} value="VPS" label="Migration" />
                         <Metric icon={Zap} value="SaaS" label="Full Stack Build" />
                         <Metric icon={ShieldCheck} value="Linux" label="Prod Security" />
@@ -47,7 +47,7 @@ export const ExperienceSection = () => {
                                 <Database className="w-4 h-4" /> Caballo de Hierro SaaS
                             </h4>
                             <div className="space-y-3">
-                                <FeatureItem icon={Code} text="Built a comprehensive Full Stack platform for survey management and analysis." />
+                                <FeatureItem icon={Code} text="Built a comprehensive Full Stack platform (Web & Mobile) for survey management and analysis." />
                                 <FeatureItem icon={Terminal} text="Automated report generation using Python (Pandas + OpenPyXL)." />
                                 <FeatureItem icon={TrendingDown} text="Optimized infrastructure: Migrated from Hostinger VPS to DigitalOcean Droplet." />
                             </div>
