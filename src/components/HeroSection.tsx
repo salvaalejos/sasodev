@@ -16,13 +16,13 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm sm:text-base text-slate-400 mb-10">
-                <a href="https://maps.app.goo.gl/tHqioMEZidFAfur48" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="https://maps.app.goo.gl/tHqioMEZidFAfur48" target="_blank" className="flex items-center gap-2 hover:text-white transition-colors">
                     <MapPin className="w-4 h-4 text-purple-400" /> Morelia, Michoacán
                 </a>
-                <a href="mailto:alejossalvador@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="mailto:alejossalvador@gmail.com" target="_blank" className="flex items-center gap-2 hover:text-white transition-colors">
                     <Mail className="w-4 h-4 text-purple-400" /> alejossalvador@gmail.com
                 </a>
-                <a href="https://wa.me/4381126867" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="https://wa.me/4381126867" target="_blank" className="flex items-center gap-2 hover:text-white transition-colors">
                     <Phone className="w-4 h-4 text-purple-400" /> 438 112 6867
                 </a>
             </div>
