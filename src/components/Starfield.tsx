@@ -1,21 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+
+// Definimos la estructura de las estrellas
+type Star = {
+    x: number;
+    y: number;
+    radius: number;
+    speed: number;
+    alpha: number;
+    alphaChange: number;
+};
 
 const Starfield = () => {
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        const canvas = canvasRef.current ? canvasRef.current : null;
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
         const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
         let animationFrameId: number;
 
-        // Ajustar el canvas al tamaño de la pantalla
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const stars = [];
-        const numStars = 200; // Puedes subir o bajar este número para más o menos estrellas
+        // Le asignamos el tipo Star al array
+        const stars: Star[] = [];
+        const numStars = 200;
 
-        // Inicializar las estrellas con propiedades aleatorias
         for (let i = 0; i < numStars; i++) {
             stars.push({
                 x: Math.random() * canvas.width,
@@ -28,10 +41,8 @@ const Starfield = () => {
         }
 
         const draw = () => {
-            // Limpiar el frame anterior
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Crear el fondo con degradado espacial (colores de Tailwind slate-900 a slate-950)
             const gradient = ctx.createRadialGradient(
                 canvas.width / 2, canvas.height / 2, 0,
                 canvas.width / 2, canvas.height / 2, canvas.width
@@ -41,23 +52,19 @@ const Starfield = () => {
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Dibujar y animar cada estrella
             stars.forEach(star => {
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
                 ctx.fill();
 
-                // Movimiento hacia arriba
                 star.y -= star.speed;
 
-                // Efecto de parpadeo (twinkle)
                 star.alpha += star.alphaChange;
                 if (star.alpha <= 0.2 || star.alpha >= 1) {
                     star.alphaChange = -star.alphaChange;
                 }
 
-                // Si la estrella sale de la pantalla, reiniciar su posición abajo
                 if (star.y < 0) {
                     star.y = canvas.height;
                     star.x = Math.random() * canvas.width;
@@ -69,7 +76,6 @@ const Starfield = () => {
 
         draw();
 
-        // Manejar el redimensionamiento de la ventana
         const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -77,7 +83,6 @@ const Starfield = () => {
 
         window.addEventListener('resize', handleResize);
 
-        // Limpiar eventos y animación cuando el componente se desmonte
         return () => {
             window.removeEventListener('resize', handleResize);
             cancelAnimationFrame(animationFrameId);
@@ -87,7 +92,6 @@ const Starfield = () => {
     return (
         <canvas
             ref={canvasRef}
-            // Las clases de Tailwind lo fijan al fondo y evitan que bloquee clicks
             className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
         />
     );

@@ -1,4 +1,11 @@
-export const Badge = ({ children, color = "cyan" }) => {
+import type {ReactNode} from 'react';
+
+type BadgeProps = {
+    children: ReactNode;
+    color?: 'cyan' | 'purple' | 'slate';
+};
+
+export const Badge = ({ children, color = "cyan" }: BadgeProps) => {
     const colors = {
         cyan: "bg-cyan-950/50 text-cyan-300 border-cyan-800/50 shadow-[0_0_10px_rgba(6,182,212,0.1)]",
         purple: "bg-purple-950/50 text-purple-300 border-purple-800/50 shadow-[0_0_10px_rgba(168,85,247,0.1)]",
@@ -7,7 +14,7 @@ export const Badge = ({ children, color = "cyan" }) => {
 
     return (
         <span className={`px-3 py-1 text-xs font-medium border rounded-full ${colors[color]}`}>
-      {children}
-    </span>
+            {children}
+        </span>
     );
 };
