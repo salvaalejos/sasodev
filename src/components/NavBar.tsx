@@ -21,7 +21,7 @@ export const NavBar = ({ scrolled }: NavBarProps) => {
                     onClick={() => scrollToSection('home')}
                     className="h-12 cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all rounded-xl hover:bg-[rgba(168,85,247,0.1)]"
                 >
-                    <img src="/src/images/logo-sasodev.png" alt="SaSoDev Logo" className="h-full w-auto object-contain" />
+                    <img src="/images/logo-sasodev.png" alt="SaSoDev Logo" className="h-full w-auto object-contain" />
                 </button>
 
                 {/* REDES SOCIALES */}

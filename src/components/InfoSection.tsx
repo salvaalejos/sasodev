@@ -27,7 +27,7 @@ export const InfoSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent z-0"></div>
 
                     <img
-                        src="/src/images/me.png"
+                        src="/images/me.png"
                         alt="Mi perfil"
                         className="w-full h-full object-contain object-bottom drop-shadow-2xl relative z-10"
                     />
